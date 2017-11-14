@@ -1,0 +1,10 @@
+<%= form_with(url: sessions_path, scope: :user, local: true) do |form| %>
+
+  <%= form.label :email %>
+  <%= form.email_field :email %>
+
+  <%= form.label :password %>
+  <%= form.password_field :password %>
+
+  <%= form.submit %>
+<% end %>

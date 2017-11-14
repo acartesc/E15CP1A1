@@ -33,6 +33,18 @@
           <p><%= alert %></p>
         </div>
       <% end %>
+
+      <%= alert %>
+      <%= notice %>
+      <% if logged? %>
+        Bienvenido <%= current_user.email %>
+        <%= link_to 'Salir', session_path(current_user), method: :delete %>
+      <% else %>
+        El usuario no ha ingresado
+        <%= link_to 'Registrar', users_sign_up_path %>
+        <%= link_to 'Ingresar', users_sign_in_path %>
+      <%end%>
+
       <%= yield %>
     </div>
   </body>
